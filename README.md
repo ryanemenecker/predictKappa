@@ -11,7 +11,13 @@ The current implementation (July 22, 2021) has an error rate of about 4.5%. We p
 
 ## Using predictKappa
 
-***Need to update some day***
+The first thing you need to do is install predictKappa, which is currently only available on GitHub (maybe on PyPi some day...).
+
+To clone the GitHub repository and gain the ability to modify a local copy of the code, run
+
+    $ git clone https://github.com/ryanemenecker/predictKappa.git
+    $ cd predictKappa
+    $ pip install .
 
 
 Once installed, in Python simply import predictKappa
