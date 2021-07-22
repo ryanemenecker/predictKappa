@@ -5,7 +5,7 @@ pget kappa values but today!
 """
 
 # Add imports here
-from .pred_kappa import *
+from .predict import *
 
 # Handle versioneer
 from ._version import get_versions

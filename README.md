@@ -1,18 +1,28 @@
 predictKappa
 ==============================
-[//]: # (Badges)
-[![GitHub Actions Build Status](https://github.com/REPLACE_WITH_OWNER_ACCOUNT/predictKappa/workflows/CI/badge.svg)](https://github.com/REPLACE_WITH_OWNER_ACCOUNT/predictKappa/actions?query=workflow%3ACI)
-[![codecov](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/predictKappa/branch/master/graph/badge.svg)](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/predictKappa/branch/master)
+
+# predictKappa - close to kappa, but a lot faster.
+
+**predictKappa** provides a Python API for predicting kappa values of protein sequences. Kappa is a value that describes the charge asymmetry of a sequence and is known to have an impact on IDR behavior (see: *Conformations of intrinsically disordered proteins are influenced by linear sequence distributions of oppositely charged residues* Das, R.K. & Pappu, R.V. (2013) PNAS 110, 33, pp 13392 - 13397). However, kappa calculations are computationally expensive and fairly slow. To bypass this, we generated a bunch of sequences with a broad range of fractions of charged residues, net charge per residue, and length, and calculated their kappa values the old school way. We then input these sequences and their corresponding known kappa values into PARROT (see https://github.com/idptools/parrot), which generated a bidirectional recurrent neural network (BRNN) that predicts kappa values of protein sequences.
+
+## How accurate is predictKappa?
+
+The current implementation (July 22, 2021) has an error rate of about 4.5%. We plan on adding more sequences to our training set and making better networks in the future.
+
+## Using predictKappa
+
+***Need to update some day***
 
 
-pget kappa values but today!
+Once installed, in Python simply import predictKappa
 
-### Copyright
+    from predictKappa import predict
 
-Copyright (c) 2021, Washington University School of Medicine
+Now you can predict kappa from any protein sequence by using the predict.kappa() function.
+
+    predict.kappa('KKKKKKKKKKKKEKKEKEKKEEKKEKEKEKEKEKKEEEEEEEEEEEEEEE')
+
+    0.443426
 
 
-#### Acknowledgements
- 
-Project based on the 
-[Computational Molecular Science Python Cookiecutter](https://github.com/molssi/cookiecutter-cms) version 1.5.
+The actual kappa value is 0.453 (according to CIDER, see http://pappulab.wustl.edu/CIDER/analysis/). That's pretty close!
