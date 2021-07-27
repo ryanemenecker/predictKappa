@@ -24,7 +24,7 @@ from predictKappa.backend import brnn_architecture
 PATH = os.path.dirname(os.path.realpath(__file__))
 
 # Setting predictor equal to location of weighted values.
-predictor = "{}/networks/parrot_kappa_V1.pt".format(PATH)
+predictor = "{}/networks/kappa_parrot_v2_072621.pt".format(PATH)
 
 ##################################################################################################
 # hyperparameters used by when metapredict was trained. Manually setting them here for clarity.
